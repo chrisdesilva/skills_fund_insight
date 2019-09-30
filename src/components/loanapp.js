@@ -203,7 +203,7 @@ const LoanApp = React.forwardRef((props, ref) => {
             <h2>Loan Application</h2>
             <div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
                 {/* update with school name, remove cost of living if school does not offer it */}
-                <h3 className="text-center font-normal">{props.schoolName} Tuition{costOfLiving && <span> and Cost of Living</span>} Financing</h3>
+                <h3 className="text-center font-normal">{props.schoolName} Cost of Living Financing</h3>
                 <div className="flex justify-center">
                     <img className="w-auto" src={marching} alt="People marching and carrying flags" loading="lazy"/>
                 </div>

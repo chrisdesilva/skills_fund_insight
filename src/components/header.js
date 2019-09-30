@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
             />
           </a>
           <div className="w-1/3 flex justify-center hidden lg:block">
-            <h3 className="font-light mb-0 text-center">{schoolName} tuition made easy</h3>
+            <h3 className="font-light mb-0 text-center">{schoolName} financing made easy</h3>
           </div>
           <a
             href="https://skills.fund/"
