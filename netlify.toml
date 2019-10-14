@@ -5,3 +5,8 @@
 [[redirects]]
   from = "/accepted"
   to = "/"
+
+
+[[redirects]]
+  from = "https://insight.skills.fund"
+  to = "/"
