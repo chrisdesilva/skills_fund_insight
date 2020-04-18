@@ -31,41 +31,10 @@ const FAQ = () => {
         </h3>
       </div>
       <Collapse isOpened={q1} springConfig={{ stiffness: 150, damping: 30 }}>
-        <p>
-          The maximum amount you can borrow will depend on your program.
-          {faq.costOfLiving && (
-            <span>
-              {" "}
-              You can finance your tuition and cost of living expenses.
-            </span>
-          )}
+        <p className="mb-0 pb-4">
+          You can borrow up to $5,000 to cover living expenses during your
+          program.
         </p>
-        <ul className="mb-0 pb-4">
-          {faq.loanRange.map(program => {
-            return (
-              <li>
-                <strong>For {program.programName},</strong> you may borrow from
-                $2,000 up to {program.maxAmount} for tuition.{" "}
-                {program.col ? (
-                  <span>
-                    You may also borrow up to {program.colAmount} for cost of
-                    living. See table above the loan calculator for a breakdown
-                    by location.
-                  </span>
-                ) : (
-                  <span>Cost of living is not available for this program.</span>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-        {faq.costOfLiving && (
-          <p className="mb-0 pb-4">
-            <strong>Please note:</strong> In order to finance cost of living,
-            borrow at least $2,000 in tuition financing. You will pay your cash
-            deposit directly to <strong>{schoolName}</strong>.
-          </p>
-        )}
       </Collapse>
 
       <div onClick={() => showq2(!q2)}>
@@ -183,7 +152,7 @@ const FAQ = () => {
                 <strong>Interest-only</strong> loans allow you to hold on to
                 more of your savings during your training. You’ll start making
                 low, interest-only payments about one month after your program
-                starts and continue those payments for two months after the
+                starts and continue those payments for three months after the
                 program ends. After this interest-only period, you’ll start
                 making full payments (interest + principal).
               </li>
@@ -200,8 +169,8 @@ const FAQ = () => {
             Skills Fund’s interest-only loans allow you to hold on to more of
             your savings during your training. You’ll start making low,
             interest-only payments about one month after your program starts and
-            continue those payments for two months after the program ends. After
-            this interest-only period, you’ll start making full payments
+            continue those payments for three months after the program ends.
+            After this interest-only period, you’ll start making full payments
             (interest + principal).
           </p>
         )}
@@ -257,8 +226,8 @@ const FAQ = () => {
       <Collapse isOpened={q5} springConfig={{ stiffness: 150, damping: 30 }}>
         <p className="mb-0 pb-4">
           The deferment period is defined as the time you are attending the
-          course, plus an additional two months after program completion. These
-          additional two months are considered your grace period.
+          course, plus an additional three months after program completion.
+          These additional three months are considered your grace period.
         </p>
         {faq.interestOnly && (
           <p className="mb-0 pb-4">
@@ -333,7 +302,7 @@ const FAQ = () => {
       </div>
       <Collapse isOpened={q7} springConfig={{ stiffness: 150, damping: 30 }}>
         <p>
-          You will be charged an origination fee of 4.0%. This amount will be
+          You will be charged an origination fee of 5.0%. This amount will be
           added to the amount of tuition you borrow and is included in the total
           loan principal amount you finance. This fee helps cover the
           administrative fees associated with originating the loan and is
