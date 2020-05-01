@@ -31,10 +31,41 @@ const FAQ = () => {
         </h3>
       </div>
       <Collapse isOpened={q1} springConfig={{ stiffness: 150, damping: 30 }}>
-        <p className="mb-0 pb-4">
-          You can borrow up to $5,000 to cover living expenses during your
-          program.
+        <p>
+          The maximum amount you can borrow will depend on your program.
+          {faq.costOfLiving && (
+            <span>
+              {" "}
+              You can finance your tuition and cost of living expenses.
+            </span>
+          )}
         </p>
+        <ul className="mb-0 pb-4">
+          {faq.loanRange.map(program => {
+            return (
+              <li>
+                <strong>For {program.programName},</strong> you may borrow from
+                $2,000 up to {program.maxAmount} for tuition.{" "}
+                {program.col ? (
+                  <span>
+                    You may also borrow up to {program.colAmount} for cost of
+                    living. See table above the loan calculator for a breakdown
+                    by location.
+                  </span>
+                ) : (
+                  <span>Cost of living is not available for this program.</span>
+                )}
+              </li>
+            )
+          })}
+        </ul>
+        {faq.costOfLiving && (
+          <p className="mb-0 pb-4">
+            <strong>Please note:</strong> In order to finance cost of living,
+            borrow at least $2,000 in tuition financing. You will pay your cash
+            deposit directly to <strong>{schoolName}</strong>.
+          </p>
+        )}
       </Collapse>
 
       <div onClick={() => showq2(!q2)}>
@@ -178,9 +209,9 @@ const FAQ = () => {
           Aspire and Launch are the loan servicers for Skills Fund’s loans. This
           means Aspire or Launch will collect your monthly payments during the
           repayment phase of your loan. All loans applied for{" "}
-          <strong>before December 26th, 2019</strong> will be serviced by
+          <strong>before June or before 9th, 2019</strong> will be serviced by
           Aspire. All loans applied for{" "}
-          <strong>on or after December 26th, 2019</strong> will be serviced by
+          <strong>on or after June 10th, 2019</strong> will be serviced by
           Launch.{" "}
         </p>
         <p>
@@ -189,7 +220,7 @@ const FAQ = () => {
         </p>
         <ul className="mb-0 pb-4">
           <li className="list-disc">
-            If you applied for your loan before December 26th, 2019, visit{" "}
+            If you applied for your loan on or before June 9th, 2019, visit{" "}
             <a
               className="font-bold text-primary"
               href="https://www.aspireservicingcenter.com/"
@@ -201,7 +232,7 @@ const FAQ = () => {
             or at 1-800-243-7552.{" "}
           </li>
           <li className="list-disc">
-            If you applied for your loan on or after December 26th, 2019, visit{" "}
+            If you applied for your loan on or after June 10th, 2019, visit{" "}
             <a
               className="font-bold text-primary"
               href="https://prod.launchservicing.com/Borrower/Login.aspx"
