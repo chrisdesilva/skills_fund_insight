@@ -142,7 +142,8 @@ const LoanApp = React.forwardRef((props, ref) => {
       <div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
         {/* update with school name, remove cost of living if school does not offer it */}
         <h3 className="text-center font-normal">
-          {props.schoolName} Cost of Living Financing
+          {props.schoolName} Tuition
+          {costOfLiving && <span> and Cost of Living</span>} Financing
         </h3>
         <div className="flex justify-center">
           <img
@@ -280,13 +281,12 @@ const LoanApp = React.forwardRef((props, ref) => {
             </p>
             <p>Consent to share data:</p>
             <p>
-              By clicking the box below and beginning the application, I consent
-              under Federal and state privacy laws to NIMAA providing to Skills
-              Fund information related to my application, enrollment, and
-              completion, including but not limited to information contained in
-              my original application and supplements as well as information
-              regarding my completion, graduation, and post-program outcomes
-              information.
+              By beginning the application, I consent under Federal and state
+              privacy laws to {props.schoolName} providing to Skills Fund
+              information related to my application, enrollment, and completion,
+              including but not limited to information contained in my original
+              application and supplements as well as information regarding my
+              completion, graduation, and post-program outcomes information.
             </p>
             <p>
               <strong>While in the application, please note:</strong>
