@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
     createRedirect({
         fromPath: 'https://insight.skills.fund/*',
-        toPath: 'hthttps://skills.fund',
+        toPath: 'https://skills.fund',
         isPermanent: true,
         force: true
     })
